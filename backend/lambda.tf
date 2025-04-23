@@ -74,7 +74,7 @@ resource "aws_lambda_function_url" "myurl" {
 
   cors {
   allow_credentials = true
-  allow_origins     = ["https://mrsinghincloud.com"] #only this website is allowed to send the credentials to lambda function
+  allow_origins     = ["https://mrsinghincloud.com", "https://www.mrsinghincloud.com"] #only this website is allowed to send the credentials to lambda function
   allow_methods     = ["*"]
   allow_headers     = ["date", "keep-alive"]
   expose_headers    = ["keep-alive", "date"]
