@@ -1,0 +1,33 @@
+on:
+  push:
+    paths:
+    - 'frontend/*' #there is no folder inside frontend so we use only /*
+    - '.github/workflows/git_action_frontend.yml'
+
+jobs:
+  Updating_frontend:
+    runs-on: ubuntu-22.04
+
+    env:
+     LAMBDA_FUNCTION_URL: ${{ secrets.LAMBDA_FUNCTION_URL }}
+
+    steps:
+    - name: checkout repo
+      uses: actions/checkout@v4
+
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v4.1.0
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ca-central-1
+
+    - name: Replace Lambda URL in frontend code
+      run: sed -i "s|__LAMBDA_URL__|$LAMBDA_FUNCTION_URL|g" frontend/index.js 
+
+    - name: Updating my s3 bucket
+      run: aws s3 sync ./frontend/ s3://${{ secrets.BUCKET_NAME }}/ --delete
+      
+    - name: Invalidate CloudFront Cache
+      run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CF_DISTRIBUTION_ID }} --paths "/*" 
+
