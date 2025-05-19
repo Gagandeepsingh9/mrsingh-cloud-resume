@@ -4,6 +4,10 @@ on:
     - 'frontend/*' #there is no folder inside frontend so we use only /*
     - '.github/workflows/git_action_frontend.yml'
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   Updating_frontend:
     runs-on: ubuntu-22.04
@@ -12,7 +16,7 @@ jobs:
      LAMBDA_FUNCTION_URL: ${{ secrets.LAMBDA_FUNCTION_URL }}
 
     steps:
-    - name: checkout repo
+    - name: Git clone the repository
       uses: actions/checkout@v4
 
     - name: Configure AWS Credentials
