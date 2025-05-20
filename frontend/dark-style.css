@@ -61,6 +61,7 @@ body {
   font-family: 'IBM Plex Serif', serif;
   font-size: 2.2rem;
   color: var(--primary);
+  white-space: nowrap;
 }
 
 .topText h4 {
@@ -84,8 +85,9 @@ body {
 }
 
 #contactDetails a {
-  color: var(--link-color);
+  color: #cccccc;
   text-decoration: none;
+  font-size: 0.95rem;
 }
 
 section {
@@ -143,10 +145,14 @@ section {
   color: var(--primary);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 480px) {
   .mainDetails {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .topText h1 {
+    font-size: 1.7rem;
   }
 
   .nameContactWrap {
@@ -176,4 +182,16 @@ code {
   font-size: 0.9rem;
   font-family: 'Courier New', Courier, monospace;
   border-radius: 6px;
+}
+
+#contactDetails li strong {
+  color: #cccccc;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.count-number {
+  color: #cccccc;
+  font-weight: 500;
+  font-size: 0.95rem;
 }
