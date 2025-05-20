@@ -8,6 +8,7 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=IBM+Plex+Serif:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="dark-style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
   <div id="cv">
@@ -22,8 +23,9 @@
         </div>
         <div id="contactDetails">
           <ul>
-            <li><strong>Email:</strong> <a href="mailto:gagan13.ca@gmail.com">gagan13.ca@gmail.com</a></li>
-            <li><strong>Phone:</strong> 437-XXX-XXXX</li>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:gagan13.ca@gmail.com">gagan13.ca@gmail.com</a></li>
+            <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/profile-gagandeepsingh/" target="_blank">LinkedIn Profile</a></li>
+            <li><i class="fab fa-github"></i> <a href="https://github.com/Gagandeepsingh9" target="_blank">GitHub</a></li>
             <li><strong>Views:</strong> <span class="count-number">Loading...</span></li>
           </ul>
         </div>
@@ -63,6 +65,7 @@
         <li>Completed 12 Practical Labs</li>
         <li>Hands-on experience with S3, EC2, RDS, DynamoDB, IAM, EFS, VPC, Auto Scaling, Load Balancers, and AWS Pricing Calculator.</li>
       </ul>
+      
         <h3>Cloud Resume Challenge – Serverless Web App</h3>
         <ul>
           <li>Frontend hosted on S3 and served through CloudFront with HTTPS via ACM certificates.</li>
@@ -70,6 +73,17 @@
           <li>Backend powered by Python-based AWS Lambda and DynamoDB to track live page views using Lambda Function URL.</li>
           <li>Infrastructure managed using Terraform with remote state stored in a private S3 bucket.</li>
           <li>CI/CD pipelines created using GitHub Actions for automated deployments.</li>
+        </ul>
+
+        <h3>Secure Resume Website on Amazon EKS</h3>
+          <p><strong>Tools:</strong> AWS EKS, Kubernetes, Helm, Docker, Route 53, AWS Load Balancer Controller (ALB), ACM</p>
+        <ul>
+          <li>Containerized a personal resume website using Docker and published the image to Docker Hub.</li>
+          <li>Provisioned an EKS cluster via AWS CLI and deployed the application with Kubernetes manifests (Deployment, Service, Namespace).</li>
+          <li>Installed and configured the AWS Load Balancer Controller through Helm, leveraging IAM Roles for Service Accounts (IRSA) for least‑privilege access.</li>
+          <li>Secured ingress traffic with TLS certificates from AWS Certificate Manager, enabling HTTPS termination at the ALB.</li>
+          <li>Configured the ALB Ingress to use <code>alb.ingress.kubernetes.io/target-type: ip</code>, allowing it to route traffic directly to pod IPs without node port or cluster IP exposure.</li>
+          <li>Mapped a custom domain in Route 53 to the ALB, ensuring reliable DNS routing and encrypted connections</li>
         </ul>
       </div>
     </section>
@@ -82,8 +96,10 @@
           <li>Serverless Architecture</li>
           <li>Terraform</li>
           <li>Python</li>
-          <li>Git & GitHub</li>
+          <li>GitHub</li>
           <li>Linux</li>
+          <li>Kubernetes</li>
+          <li>Docker</li>
           <li>Computer Hardware</li>
           <li>Quick Learner</li>
         </ul>
